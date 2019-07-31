@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20190730162913) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.integer "admin"
+    t.integer "admin", default: 0
     t.string "reset_digest"
     t.string "reset_sent_at"
     t.datetime "created_at", null: false

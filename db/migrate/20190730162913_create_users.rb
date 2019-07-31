@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :email
       t.string :password_digest
-      t.integer :admin
+      t.integer :admin, default: 0
       t.string :reset_digest
       t.string :reset_sent_at
 
