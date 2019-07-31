@@ -11,7 +11,6 @@ class AdminsController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			@user.update(admin: :isadmin )
 			redirect_to '/admins'
 		else
 			render 'new'
