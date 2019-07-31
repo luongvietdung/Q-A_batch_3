@@ -1,7 +1,7 @@
 class AdminsController < ApplicationController
 	layout 'admin'
+
 	def index
-		
 	end
 
 	def new
@@ -11,22 +11,19 @@ class AdminsController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			@user.update(admin: 1)
+			@user.update(admin: :isadmin )
 			redirect_to '/admins'
 		else
 			render 'new'
 		end
 	end
 
-	def destroy
-
-		
+	def destroy	
 	end
 
 	private
 
 	def user_params
-		params.require(:user).permit(:name, :email, :password_digest)
-                                   
+		params.require(:user).permit(:name, :email, :password_digest)                               
 	end
 end
