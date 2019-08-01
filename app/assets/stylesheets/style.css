@@ -1,0 +1,14 @@
+/* form login */
+.login {
+  margin: auto;
+  padding-top: 100px;
+}
+
+/* form signup */
+.signup {
+  margin: auto;
+}
+
+#error_explanation ul li {
+  color: red;
+}
