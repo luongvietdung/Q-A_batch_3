@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   has_one :profile, dependent: :destroy
   has_many :tags, dependent: :destroy
   has_many :posts, dependent: :destroy
@@ -14,4 +15,15 @@ class User < ApplicationRecord
 
   before_save { email.downcase! }
   has_secure_password
+
+  # Returns the has digest of the given string.
+    def digest(string)
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
+    end
+
+    # Forgets a user.
+    def forget
+      update_attribute(:remember_digest, nil)
+    end
 end
