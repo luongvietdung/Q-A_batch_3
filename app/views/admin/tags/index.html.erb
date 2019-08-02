@@ -1,0 +1,7 @@
+<h1>All tags</h1>
+<% @tags.each do |tag|%>
+  <%= tag.name %>
+  <%= link_to "Edit", edit_admin_tag_path(tag) %>|
+  <%= link_to "Destroy", admin_tag_path(tag), method: :delete, data: { confirm: "Are you sure" } %>|
+  <%= link_to "Show", admin_tag_path(tag) %> <br>
+<% end %>
