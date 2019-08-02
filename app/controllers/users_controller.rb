@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to my website!"
-      redirect_to @user
+      redirect_to admin_root_path
     else
       render :new
     end
