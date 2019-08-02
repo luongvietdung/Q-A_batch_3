@@ -10,4 +10,8 @@ Rails.application.routes.draw do
     root "home#index"
     resources :tags
   end
+
+  namespace :member do
+    root "home#index"
+  end
 end

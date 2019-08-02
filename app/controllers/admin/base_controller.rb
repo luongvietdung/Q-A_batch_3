@@ -7,8 +7,7 @@ private
 
   def correct_user
     if current_user.admin != "admin"
-      flash[:errors] = "Access denied!"
-      redirect_to login_path
+      render file: "public/404.html"
     end
   end
 end
